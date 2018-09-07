@@ -1,6 +1,9 @@
 group7_animation();
-var timeline;
-var timeline2;
+var timeline; // group 7 expand timeline
+var timeline2; // group 7 reduce timeline
+var timelineS; // Sun expand timeline
+var timelineS2; // Sun reduce timeline
+var timelineB; // background timeline
 
 function group7_animation() {
     timeline = anime.timeline({
@@ -11,6 +14,21 @@ function group7_animation() {
     timeline2 = anime.timeline({
         loop: false,
         autoplay: false
+    });
+
+    timelineS = anime.timeline({
+        loop: false,
+        autoplay: true
+    });
+
+    timelineS2 = anime.timeline({
+        loop: false,
+        autoplay: false
+    });
+
+    timelineB = anime.timeline({
+        loop: false,
+        autoplay: true
     });
     
     var init_transX = [160, 160, 160, 160, 160, 160, 160, 180, 260, 200, 250];
@@ -37,6 +55,27 @@ function group7_animation() {
         easing: 'easeOutExpo',
         duration: function(el, i) { return duration[i]; },
     });
+
+    timelineS.add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 120,
+        duration: 0
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 10,
+        duration: 800,
+        easing: 'easeOutExpo',
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 60,
+        duration: 1000,
+        easing: 'linear',
+    });
+
+
     
     var init_transX2 = [50, 0, 0, 90, 30, 190, 230, 290, 260, 10, 310];
     var init_transY2 = [10, 0, 120, 200, 230, 0, 90, 40, 100, 5, 230];
@@ -61,13 +100,33 @@ function group7_animation() {
         easing: 'easeInExpo',
         duration: function(el, i) { return duration[i]; },
     });
+
+    timelineS2.add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 60,
+        duration: 0
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 10,
+        duration: 1800,
+        easing: 'linear',
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 120,
+        duration: 1200,
+        easing: 'easeOutExpo',
+    });
 }
 
 document.getElementById("play1").onclick = function() {
     timeline.restart();
+    timelineS.restart();
 };
 
 document.getElementById("play2").onclick = function() {
-    
     timeline2.restart();
+    timelineS2.restart();
 };
