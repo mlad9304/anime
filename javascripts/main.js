@@ -1,26 +1,3 @@
-// var cssSelector = anime({
-//     targets: '#Group-41',
-//     translateX: {
-//         value: 50,
-//         duration: 3800
-//     },
-//     translateY: {
-//         value: 20,
-//         duration: 3800,
-//     },
-//     // rotate: {
-//     //     value: -50,
-//     //     duration: 2200,
-//     // },
-//     // scale: {
-//     //     value: 1/2,
-//     //     duration: 2200,
-//     // },
-
-    
-// });
-document.getElementById('Group-41').setAttribute('transform', 'translate(151.000000, 110.000000)');
-
 var timeline = anime.timeline({
     loop: false,
     autoplay: true
@@ -34,28 +11,40 @@ var timeline1 = anime.timeline({
 timeline.add({
     targets: '#Group-41',
     translateX: 150,
-    translateY: 120,
-    duration: 0,
-    delay: 1000
+    translateY: 170,
+    scale: 1/2,
+    rotate: -50,
+    duration: 0
 }).add({
     targets: '#Group-41',
-    translateX: 10,
-    translateY: 20,
+    translateX: 50,
+    translateY: 0,
+    scale: {
+        value: 1,
+        duration: 2500
+    },
+    rotate: {
+        value: 20,
+        duration: 2500
+    },
     easing: 'easeOutExpo',
-    duration: 1000
+    duration: 2500
 });
 
 timeline1.add({
     targets: '#Group-41',
-    translateX: 10,
-    translateY: 20,
+    translateX: 50,
+    translateY: 0,
+    rotate: 20,
     duration: 0
 }).add({
     targets: '#Group-41',
     translateX: 150,
-    translateY: 120,
+    translateY: 170,
+    scale: 1/2,
+    rotate: -50,
     easing: 'easeInExpo',
-    duration: 1000
+    duration: 2500
 });
 
 document.getElementById("play1").onclick = function() {
