@@ -3,7 +3,16 @@ var timeline; // group 7 expand timeline
 var timeline2; // group 7 reduce timeline
 var timelineS; // Sun expand timeline
 var timelineS2; // Sun reduce timeline
-var timelineB; // background timeline
+var timelineB; // background(Rock) expand timeline
+var timelineB2; // background(Rock) reduce timeline
+var timelineT1; // Tree1 expand
+var timelineT12; // Tree1 reduce
+var timelineT2; // Tree2 expand
+var timelineT22; // Tree2 reduce
+var timelineT3; // Tree3 expand
+var timelineT32; // Tree3 reduce
+var timelineT4; // Tree4 expand
+var timelineT42; // Tree4 reduce
 
 function group7_animation() {
     timeline = anime.timeline({
@@ -29,6 +38,51 @@ function group7_animation() {
     timelineB = anime.timeline({
         loop: false,
         autoplay: true
+    });
+
+    timelineB2 = anime.timeline({
+        loop: false,
+        autoplay: false
+    });
+
+    timelineT1 = anime.timeline({
+        loop: false,
+        autoplay: true
+    });
+
+    timelineT12 = anime.timeline({
+        loop: false,
+        autoplay: false
+    });
+
+    timelineT2 = anime.timeline({
+        loop: false,
+        autoplay: true
+    });
+
+    timelineT22 = anime.timeline({
+        loop: false,
+        autoplay: false
+    });
+
+    timelineT3 = anime.timeline({
+        loop: false,
+        autoplay: true
+    });
+
+    timelineT32 = anime.timeline({
+        loop: false,
+        autoplay: false
+    });
+
+    timelineT4 = anime.timeline({
+        loop: false,
+        autoplay: true
+    });
+
+    timelineT42 = anime.timeline({
+        loop: false,
+        autoplay: false
     });
     
     var init_transX = [160, 160, 160, 160, 160, 160, 160, 180, 260, 200, 250];
@@ -119,14 +173,204 @@ function group7_animation() {
         duration: 1200,
         easing: 'easeOutExpo',
     });
+
+    timelineB.add({
+        targets: '#Group-59',
+        scaleY: 0,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-59',
+        scaleY: 1,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 0
+    });
+
+    timelineB2.add({
+        targets: '#Group-59',
+        scaleY: 1,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-59',
+        scaleY: 0,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeInExpo',
+        offset: 1000
+    });
+
+    timelineT1.add({
+        targets: '#Group-55',
+        scaleY: 0,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-55',
+        scaleY: 1,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 800
+    });
+
+    timelineT12.add({
+        targets: '#Group-55',
+        scaleY: 1,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-55',
+        scaleY: 0,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 800
+    });
+
+    timelineT2.add({
+        targets: '#Group-52',
+        scaleY: 0,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-52',
+        scaleY: 1,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 1400
+    });
+
+    timelineT22.add({
+        targets: '#Group-52',
+        scaleY: 1,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-52',
+        scaleY: 0,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 1300
+    });
+
+    timelineT3.add({
+        targets: '#Group-53',
+        scaleY: 0,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-53',
+        scaleY: 1,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 1100
+    });
+
+    timelineT32.add({
+        targets: '#Group-53',
+        scaleY: 1,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-53',
+        scaleY: 0,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 1100
+    });
+
+    timelineT4.add({
+        targets: '#Group-56',
+        scaleY: 0,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-56',
+        scaleY: 1,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 800
+    });
+
+    timelineT42.add({
+        targets: '#Group-56',
+        scaleY: 1,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-56',
+        scaleY: 0,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 3000,
+        easing: 'easeOutExpo',
+        offset: 900
+    });
 }
 
 document.getElementById("play1").onclick = function() {
     timeline.restart();
     timelineS.restart();
+    timelineB.restart();
+    timelineT1.restart();
+    timelineT2.restart();
+    timelineT3.restart();
+    timelineT4.restart();
 };
 
 document.getElementById("play2").onclick = function() {
     timeline2.restart();
     timelineS2.restart();
+    timelineB2.restart();
+    timelineT12.restart();
+    timelineT22.restart();
+    timelineT32.restart();
+    timelineT42.restart();
 };
