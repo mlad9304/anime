@@ -10,21 +10,21 @@ var timeline1 = anime.timeline({
 
 timeline.add({
     targets: '#Group-41',
-    translateX: 150,
-    translateY: 170,
+    translateX: 160,
+    translateY: 250,
     scale: 1/2,
-    rotate: -50,
+    rotate: -60,
     duration: 0
 }).add({
     targets: '#Group-41',
     translateX: 50,
-    translateY: 0,
+    translateY: 10,
     scale: {
         value: 1,
         duration: 2500
     },
     rotate: {
-        value: 20,
+        value: 0,
         duration: 2500
     },
     easing: 'easeOutExpo',
@@ -34,15 +34,18 @@ timeline.add({
 timeline1.add({
     targets: '#Group-41',
     translateX: 50,
-    translateY: 0,
-    rotate: 20,
+    translateY: 10,
+    rotate: 0,
     duration: 0
 }).add({
     targets: '#Group-41',
-    translateX: 150,
-    translateY: 170,
+    translateX: 160,
+    translateY: 250,
     scale: 1/2,
-    rotate: -50,
+    rotate: {
+        value: -60,
+        duration: 2500
+    },
     easing: 'easeInExpo',
     duration: 2500
 });
