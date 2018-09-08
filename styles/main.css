@@ -1,0 +1,71 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+
+    background: #f0f4f8;
+    color: #979797;
+
+    font-family: 'Raleway', sans-serif;
+}
+
+.section {
+    min-width: 1280px;
+    min-height: 700px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -350px 0 0 -640px;
+
+    display: flex;
+    
+}
+
+.text-container, .svg-container {
+    flex: 1;
+    height: 100%;
+}
+
+.text-content {
+    margin-top: 267px;
+    margin-left: 185px;
+    width: 466px;
+    height: 186px;
+}
+
+.svg-content {
+    margin-top: 96px;
+    margin-left: 0;
+    width: 533px;
+    height: 518px;
+}
+
+.text-title {
+    font-size: 28px;
+    color: #484848;
+    text-align: left;
+    line-height: 38px;
+}
+.text-body {
+    font-size: 14px;
+    color: #767676;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+.text-bottom {
+    font-size: 15px;
+    color: #484848;
+    text-align: left;
+    line-height: 24px;
+}
