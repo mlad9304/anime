@@ -18,12 +18,14 @@ var timelineC1; // cloud1
 var timelineC12; // cloud1
 
 
-var timelineTextH; // Text Header
-var timelineTextB; // Text Body
-var timelineTextF; // Text Footer
-var timelineText2; // Text area reduce
-
-var timelineBgColor; // Backgroud Color
+var t35_lineTextH; // Text Header
+var t35_lineTextB; // Text Body
+var t35_lineTextF; // Text Footer
+var t35_lineTextH_WithOffset; // Text Header
+var t35_lineTextB_WithOffset; // Text Body
+var t35_lineTextF_WithOffset; // Text Footer
+var t35_lineText; // Text area
+var t35_lineText2; // Text area reduce
 
 
 function group35_animation() {
@@ -84,7 +86,7 @@ function group35_animation() {
         translateX: 44,
         translateY: 171,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1500,
         easing: 'easeInExpo',
         offset: 1000
     });
@@ -105,7 +107,7 @@ function group35_animation() {
         translateX: 101,
         translateY: 182,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 2200,
         easing: 'easeOutExpo',
         offset: 800
     });
@@ -126,7 +128,7 @@ function group35_animation() {
         translateX: 101,
         translateY: 182,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1700,
         easing: 'easeOutExpo',
         offset: 800
     });
@@ -148,7 +150,7 @@ function group35_animation() {
         translateX: 138,
         translateY: 91,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1600,
         easing: 'easeOutExpo',
         offset: 1400
     });
@@ -169,7 +171,7 @@ function group35_animation() {
         translateX: 138,
         translateY: 91,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1200,
         easing: 'easeOutExpo',
         offset: 1300
     });
@@ -190,7 +192,7 @@ function group35_animation() {
         translateX: 365,
         translateY: 142,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1900,
         easing: 'easeOutExpo',
         offset: 1100
     });
@@ -211,7 +213,7 @@ function group35_animation() {
         translateX: 365,
         translateY: 142,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1400,
         easing: 'easeOutExpo',
         offset: 1100
     });
@@ -232,7 +234,7 @@ function group35_animation() {
         translateX: 402,
         translateY: 111,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 2200,
         easing: 'easeOutExpo',
         offset: 800
     });
@@ -253,7 +255,7 @@ function group35_animation() {
         translateX: 402,
         translateY: 111,
         transformOrigin: "0px center",
-        duration: 3000,
+        duration: 1600,
         easing: 'easeOutExpo',
         offset: 900
     });
@@ -309,7 +311,7 @@ function group35_animation() {
     var transY2 = [250, 250, 250, 250, 250, 250, 250, 150, 250, 240, 300];
     var scale = [1/2, 1/10, 1/2, 1/10, 1/2, 1/2, 1/10, 1/8, 1/4, 1/10, 1/4];
     var rotate = [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80];
-    var duration = [2500, 3000, 2500, 3000, 2500, 2500, 2500, 2500, 2500, 2500, 2500];
+    var duration = [2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500];
     
     timeline2.add({
         targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
@@ -342,7 +344,7 @@ function group35_animation() {
         targets: '#Group-3',
         translateX: 20,
         translateY: 60,
-        duration: 1000,
+        duration: 1200,
         easing: 'linear',
     });
 
@@ -355,14 +357,14 @@ function group35_animation() {
         targets: '#Group-3',
         translateX: 20,
         translateY: 10,
-        duration: 1800,
+        duration: 500,
         easing: 'linear',
     }).add({
         targets: '#Group-3',
         translateX: 20,
         translateY: 300,
-        duration: 2800,
-        easing: 'easeOutExpo',
+        duration: 2000,
+        easing: 'linear',
     });
 
     timelineC.add({
@@ -388,7 +390,7 @@ function group35_animation() {
         translateX: 185,
         translateY: 120,
         scale: 1/2,
-        duration: 3000,
+        duration: 1200,
         easing: 'easeOutExpo',
         offset: 1300
     });
@@ -415,7 +417,7 @@ function group35_animation() {
         targets: '#Group-60',
         translateX: 280,
         translateY: 190,
-        duration: 3000,
+        duration: 1200,
         easing: 'easeOutExpo',
         offset: 1300
     });
@@ -423,32 +425,10 @@ function group35_animation() {
 
 function group35_text_animation() {
 
-    timelineTextH = anime.timeline({
+    t35_lineTextH = anime.timeline({
         loop: false,
         autoplay: true
-    });
-
-    timelineTextB = anime.timeline({
-        loop: false,
-        autoplay: true
-    });
-
-    timelineTextF = anime.timeline({
-        loop: false,
-        autoplay: true
-    });
-    
-    timelineText2 = anime.timeline({
-        loop: false,
-        autoplay: false
-    });
-
-    timelineBgColor = anime.timeline({
-        loop: false,
-        autoplay: false
-    });
-
-    timelineTextH.add({
+    }).add({
         targets: '#text-content-group-35 .text-title',
         translateX: 0,
         translateY: -20,
@@ -463,7 +443,10 @@ function group35_text_animation() {
         easing: 'easeOutExpo',
     });
 
-    timelineTextB.add({
+    t35_lineTextB = anime.timeline({
+        loop: false,
+        autoplay: true
+    }).add({
         targets: '#text-content-group-35 .text-body',
         translateX: 0,
         translateY: 50,
@@ -478,7 +461,10 @@ function group35_text_animation() {
         easing: 'easeOutExpo',
     });
 
-    timelineTextF.add({
+    t35_lineTextF = anime.timeline({
+        loop: false,
+        autoplay: true
+    }).add({
         targets: '#text-content-group-35 .text-bottom',
         translateX: 0,
         translateY: 20,
@@ -494,7 +480,78 @@ function group35_text_animation() {
         offset: 500
     });
 
-    timelineText2.add({
+    t35_lineTextH_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: true
+    }).add({
+        targets: '#text-content-group-35 .text-title',
+        translateX: 0,
+        translateY: -20,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-title',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 1000,
+        easing: 'easeOutExpo',
+        offset: 1300,
+    });
+
+    t35_lineTextB_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: true
+    }).add({
+        targets: '#text-content-group-35 .text-body',
+        translateX: 0,
+        translateY: 50,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-body',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 2000,
+        easing: 'easeOutExpo',
+        offset: 1300,
+    });
+
+    t35_lineTextF_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: true
+    }).add({
+        targets: '#text-content-group-35 .text-bottom',
+        translateX: 0,
+        translateY: 20,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-bottom',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 800,
+        easing: 'easeOutExpo',
+        offset: 1800
+    });
+
+    t35_lineText = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#text-content-group-35',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 0
+    });
+
+    t35_lineText2 = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
         targets: '#text-content-group-35',
         translateX: 0,
         translateY: 0,
@@ -508,17 +565,28 @@ function group35_text_animation() {
         duration: 2000,
         easing: 'easeInExpo',
     });
+}
 
-    timelineBgColor.add({
-        targets: '.container',
-        background: '#f0f4f8',
-        duration: 0
-    }).add({
-        targets: '.container',
-        background: '#fff1f1',
-        duration: 3000,
-        easing: 'easeInExpo',
-    });
+function group35_text_animation_start() {
+
+    t35_lineText.restart();
+    t35_lineTextH.restart();
+    t35_lineTextB.restart();
+    t35_lineTextF.restart();
+
+}
+
+function group35_text_animation_start_with_offset() {
+
+    t35_lineText.restart();
+    t35_lineTextH_WithOffset.restart();
+    t35_lineTextB_WithOffset.restart();
+    t35_lineTextF_WithOffset.restart();
+
+}
+
+function group35_text_animation_end() {
+    t35_lineText2.restart();
 }
 
 function group35_animation_start() {
@@ -531,9 +599,6 @@ function group35_animation_start() {
     timelineT4.restart();
     timelineC.restart();
     timelineC1.restart();
-    timelineTextH.restart();
-    timelineTextB.restart();
-    timelineTextF.restart();
     
 }
 
@@ -547,6 +612,5 @@ function group35_animation_end() {
     timelineT42.restart();
     timelineC2.restart();
     timelineC12.restart();
-    timelineText2.restart();
-    timelineBgColor.restart();
+    
 }
