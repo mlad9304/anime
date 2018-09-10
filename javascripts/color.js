@@ -29,7 +29,7 @@ t35_37_lineBgC2 = anime.timeline({
 }).add({
     targets: '.container',
     background: '#f0f4f8',
-    duration: 3000,
+    duration: 2500,
     easing: 'easeInExpo',
 });
 

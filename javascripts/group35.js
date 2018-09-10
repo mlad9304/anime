@@ -17,6 +17,16 @@ var timelineC2; // cloud
 var timelineC1; // cloud1
 var timelineC12; // cloud1
 
+var timeline_with_offset; // group 7 expand timeline
+var timelineS_with_offset; // Sun expand timeline
+var timelineB_with_offset; // background(Rock) expand timeline
+var timelineT1_with_offset; // Tree1 expand
+var timelineT2_with_offset; // Tree2 expand
+var timelineT3_with_offset; // Tree3 expand
+var timelineT4_with_offset; // Tree4 expand
+var timelineC_with_offset; // cloud
+var timelineC1_with_offset; // cloud1
+
 
 var t35_lineTextH; // Text Header
 var t35_lineTextB; // Text Body
@@ -29,24 +39,112 @@ var t35_lineText2; // Text area reduce
 
 
 function group35_animation() {
+    
+    var init_transX = [160, 160, 160, 160, 160, 160, 160, 180, 260, 240, 240];
+    var init_transY = [250, 250, 250, 250, 250, 250, 250, 150, 250, 240, 300];
+    var transX = [50, 10, 0, 90, 30, 190, 230, 290, 260, 270, 310];
+    var transY = [10, 40, 120, 200, 230, 0, 90, 40, 100, 200, 230];
+    var init_scale = [1/2, 1/20, 1/2, 1/10, 1/2, 1/2, 1/10, 1/8, 1/4, 1/10, 1/4];
+    var init_rotate = [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80];
+    var duration = [3000, 1800, 3000, 1800, 3000, 3000, 3000, 3000, 3000, 3000, 3000];
+    
     timeline = anime.timeline({
         loop: false,
         autoplay: true
+    }).add({
+        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
+        translateX: function(el, i) { return init_transX[i]; },
+        translateY: function(el, i) { return init_transY[i]; },
+        scale: function(el, i) { return init_scale[i]; },
+        rotate: function(el, i) { return init_rotate[i]; },
+        duration: 0
+    }).add({
+        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
+        translateX: function(el, i) { return transX[i]; },
+        translateY: function(el, i) { return transY[i]; },
+        scale: 1,
+        rotate: 0,
+        easing: 'easeOutExpo',
+        duration: function(el, i) { return duration[i]; },
     });
+    
+    var init_transX2 = [50, 10, 0, 90, 30, 190, 230, 290, 260, 270, 310];
+    var init_transY2 = [10, 40, 120, 200, 230, 0, 90, 40, 100, 200, 230];
+    var transX2 = [160, 160, 160, 160, 160, 160, 160, 180, 260, 240, 240];
+    var transY2 = [250, 250, 250, 250, 250, 250, 250, 150, 250, 240, 300];
+    var scale = [1/2, 1/10, 1/2, 1/10, 1/2, 1/2, 1/10, 1/8, 1/4, 1/10, 1/4];
+    var rotate = [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80];
+    var duration = [2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500];
     
     timeline2 = anime.timeline({
         loop: false,
         autoplay: false
+    }).add({
+        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
+        translateX: function(el, i) { return init_transX2[i]; },
+        translateY: function(el, i) { return init_transY2[i]; },
+        rotate: 0,
+        duration: 0
+    }).add({
+        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
+        translateX: function(el, i) { return transX2[i]; },
+        translateY: function(el, i) { return transY2[i]; },
+        scale: function(el, i) { return scale[i]; },
+        rotate: function(el, i) { return rotate[i]; },
+        easing: 'easeInExpo',
+        duration: function(el, i) { return duration[i]; },
     });
 
     timelineS = anime.timeline({
         loop: false,
         autoplay: true
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 120,
+        duration: 0
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 10,
+        opacity: 1,
+        duration: 800,
+        easing: 'easeOutExpo',
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 30,
+        opacity: 1,
+        duration: 1200,
+        easing: 'linear',
     });
 
     timelineS2 = anime.timeline({
         loop: false,
         autoplay: false
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 30,
+        duration: 0,
+        opacity: 1,
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 10,
+        duration: 500,
+        easing: 'linear',
+    }).add({
+        targets: '#Group-3',
+        translateX: 20,
+        translateY: 180,
+        duration: 1500,
+        easing: 'easeInQuart',
+    }).add({
+        targets: '#Group-3',
+        opacity: 0,
+        duration: 500,
+        easing: 'easeOutExpo',
     });
 
     timelineB = anime.timeline({
@@ -129,7 +227,7 @@ function group35_animation() {
         translateY: 182,
         transformOrigin: "0px center",
         duration: 1700,
-        easing: 'easeOutExpo',
+        easing: 'linear',
         offset: 800
     });
 
@@ -172,7 +270,7 @@ function group35_animation() {
         translateY: 91,
         transformOrigin: "0px center",
         duration: 1200,
-        easing: 'easeOutExpo',
+        easing: 'linear',
         offset: 1300
     });
 
@@ -214,7 +312,7 @@ function group35_animation() {
         translateY: 142,
         transformOrigin: "0px center",
         duration: 1400,
-        easing: 'easeOutExpo',
+        easing: 'linear',
         offset: 1100
     });
 
@@ -256,39 +354,91 @@ function group35_animation() {
         translateY: 111,
         transformOrigin: "0px center",
         duration: 1600,
-        easing: 'easeOutExpo',
+        easing: 'linear',
         offset: 900
     });
 
     timelineC = anime.timeline({
         loop: false,
         autoplay: true
+    }).add({
+        targets: '#Group-58',
+        translateX: 185,
+        translateY: 120,
+        duration: 0
+    }).add({
+        targets: '#Group-58',
+        translateX: 30,
+        translateY: 120,
+        duration: 3000,
+        easing: 'easeOutExpo',
     });
 
     timelineC2 = anime.timeline({
         loop: false,
         autoplay: false
+    }).add({
+        targets: '#Group-58',
+        translateX: 30,
+        translateY: 120,
+        duration: 0
+    }).add({
+        targets: '#Group-58',
+        translateX: 185,
+        translateY: 120,
+        scale: 1/2,
+        duration: 1200,
+        easing: 'easeInExpo',
+        offset: 1300
     });
 
     timelineC1 = anime.timeline({
         loop: false,
         autoplay: true
+    }).add({
+        targets: '#Group-60',
+        translateX: 280,
+        translateY: 190,
+        duration: 0
+    }).add({
+        targets: '#Group-60',
+        translateX: 480,
+        translateY: 190,
+        duration: 3000,
+        easing: 'easeOutExpo',
     });
 
     timelineC12 = anime.timeline({
         loop: false,
         autoplay: false
+    }).add({
+        targets: '#Group-60',
+        translateX: 480,
+        translateY: 190,
+        duration: 0
+    }).add({
+        targets: '#Group-60',
+        translateX: 280,
+        translateY: 190,
+        duration: 1200,
+        easing: 'easeInExpo',
+        offset: 1300
     });
-    
-    var init_transX = [160, 160, 160, 160, 160, 160, 160, 180, 260, 240, 250];
-    var init_transY = [250, 250, 250, 250, 250, 250, 250, 140, 250, 240, 300];
+}
+
+function group35_animation_with_offset(offset) {
+    var init_transX = [160, 160, 160, 160, 160, 160, 160, 180, 260, 240, 240];
+    var init_transY = [250, 250, 250, 250, 250, 250, 250, 150, 250, 240, 300];
     var transX = [50, 10, 0, 90, 30, 190, 230, 290, 260, 270, 310];
     var transY = [10, 40, 120, 200, 230, 0, 90, 40, 100, 200, 230];
     var init_scale = [1/2, 1/20, 1/2, 1/10, 1/2, 1/2, 1/10, 1/8, 1/4, 1/10, 1/4];
     var init_rotate = [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80];
     var duration = [3000, 1800, 3000, 1800, 3000, 3000, 3000, 3000, 3000, 3000, 3000];
     
-    timeline.add({
+    timeline_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
         targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
         translateX: function(el, i) { return init_transX[i]; },
         translateY: function(el, i) { return init_transY[i]; },
@@ -303,99 +453,164 @@ function group35_animation() {
         rotate: 0,
         easing: 'easeOutExpo',
         duration: function(el, i) { return duration[i]; },
-    });
-    
-    var init_transX2 = [50, 10, 0, 90, 30, 190, 230, 290, 260, 270, 310];
-    var init_transY2 = [10, 40, 120, 200, 230, 0, 90, 40, 100, 200, 230];
-    var transX2 = [160, 160, 160, 160, 160, 160, 160, 180, 260, 240, 240];
-    var transY2 = [250, 250, 250, 250, 250, 250, 250, 150, 250, 240, 300];
-    var scale = [1/2, 1/10, 1/2, 1/10, 1/2, 1/2, 1/10, 1/8, 1/4, 1/10, 1/4];
-    var rotate = [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80];
-    var duration = [2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500];
-    
-    timeline2.add({
-        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
-        translateX: function(el, i) { return init_transX2[i]; },
-        translateY: function(el, i) { return init_transY2[i]; },
-        rotate: 0,
-        duration: 0
-    }).add({
-        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
-        translateX: function(el, i) { return transX2[i]; },
-        translateY: function(el, i) { return transY2[i]; },
-        scale: function(el, i) { return scale[i]; },
-        rotate: function(el, i) { return rotate[i]; },
-        easing: 'easeInExpo',
-        duration: function(el, i) { return duration[i]; },
+        offset: offset
     });
 
-    timelineS.add({
+    timelineS_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
         targets: '#Group-3',
         translateX: 20,
-        translateY: 120,
-        duration: 0
+        translateY: 180,
+        opacity: 0,
+        duration: 0,
     }).add({
         targets: '#Group-3',
         translateX: 20,
         translateY: 10,
+        opacity: 1,
         duration: 800,
         easing: 'easeOutExpo',
+        offset: offset
     }).add({
         targets: '#Group-3',
         translateX: 20,
-        translateY: 60,
+        translateY: 30,
+        opacity: 1,
         duration: 1200,
         easing: 'linear',
+        offset: offset+800
     });
 
-    timelineS2.add({
-        targets: '#Group-3',
-        translateX: 20,
-        translateY: 60,
+    timelineB_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#Group-59',
+        scaleY: 0,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
         duration: 0
     }).add({
-        targets: '#Group-3',
-        translateX: 20,
-        translateY: 10,
-        duration: 500,
-        easing: 'linear',
-    }).add({
-        targets: '#Group-3',
-        translateX: 20,
-        translateY: 300,
-        duration: 2000,
-        easing: 'linear',
-    });
-
-    timelineC.add({
-        targets: '#Group-58',
-        translateX: 160,
-        translateY: 120,
-        duration: 0
-    }).add({
-        targets: '#Group-58',
-        translateX: 30,
-        translateY: 120,
+        targets: '#Group-59',
+        scaleY: 1,
+        translateX: 44,
+        translateY: 171,
+        transformOrigin: "0px center",
         duration: 3000,
         easing: 'easeOutExpo',
+        offset: offset
     });
 
-    timelineC2.add({
-        targets: '#Group-58',
-        translateX: 30,
-        translateY: 120,
+    timelineT1_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#Group-55',
+        scaleY: 0,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
         duration: 0
+    }).add({
+        targets: '#Group-55',
+        scaleY: 1,
+        translateX: 101,
+        translateY: 182,
+        transformOrigin: "0px center",
+        duration: 2200,
+        easing: 'easeOutExpo',
+        offset: offset+800
+    });
+
+    timelineT2_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#Group-52',
+        scaleY: 0,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-52',
+        scaleY: 1,
+        translateX: 138,
+        translateY: 91,
+        transformOrigin: "0px center",
+        duration: 1600,
+        easing: 'easeOutExpo',
+        offset: offset+1400
+    });
+
+    timelineT3_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#Group-53',
+        scaleY: 0,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-53',
+        scaleY: 1,
+        translateX: 365,
+        translateY: 142,
+        transformOrigin: "0px center",
+        duration: 1900,
+        easing: 'easeOutExpo',
+        offset: offset+1100
+    });
+
+    timelineT4_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#Group-56',
+        scaleY: 0,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 0
+    }).add({
+        targets: '#Group-56',
+        scaleY: 1,
+        translateX: 402,
+        translateY: 111,
+        transformOrigin: "0px center",
+        duration: 2200,
+        easing: 'easeOutExpo',
+        offset: offset+800
+    });
+
+    timelineC_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
     }).add({
         targets: '#Group-58',
         translateX: 185,
         translateY: 120,
         scale: 1/2,
-        duration: 1200,
+        duration: 0
+    }).add({
+        targets: '#Group-58',
+        translateX: 30,
+        translateY: 120,
+        duration: 3000,
+        scale: 1,
         easing: 'easeOutExpo',
-        offset: 1300
+        offset: offset
     });
 
-    timelineC1.add({
+    timelineC1_with_offset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
         targets: '#Group-60',
         translateX: 280,
         translateY: 190,
@@ -406,20 +621,7 @@ function group35_animation() {
         translateY: 190,
         duration: 3000,
         easing: 'easeOutExpo',
-    });
-
-    timelineC12.add({
-        targets: '#Group-60',
-        translateX: 480,
-        translateY: 190,
-        duration: 0
-    }).add({
-        targets: '#Group-60',
-        translateX: 280,
-        translateY: 190,
-        duration: 1200,
-        easing: 'easeOutExpo',
-        offset: 1300
+        offset: offset
     });
 }
 
@@ -480,63 +682,6 @@ function group35_text_animation() {
         offset: 500
     });
 
-    t35_lineTextH_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: -20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 1000,
-        easing: 'easeOutExpo',
-        offset: 1300,
-    });
-
-    t35_lineTextB_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 50,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 2000,
-        easing: 'easeOutExpo',
-        offset: 1300,
-    });
-
-    t35_lineTextF_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 800,
-        easing: 'easeOutExpo',
-        offset: 1800
-    });
-
     t35_lineText = anime.timeline({
         loop: false,
         autoplay: false
@@ -562,8 +707,67 @@ function group35_text_animation() {
         translateX: 0,
         translateY: -500,
         opacity: 0,
-        duration: 2000,
+        duration: 2500,
         easing: 'easeInExpo',
+    });
+}
+
+function group35_text_animation_with_offset(offset) {
+    t35_lineTextH_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#text-content-group-35 .text-title',
+        translateX: 0,
+        translateY: -20,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-title',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 1000,
+        easing: 'easeOutExpo',
+        offset: offset,
+    });
+
+    t35_lineTextB_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#text-content-group-35 .text-body',
+        translateX: 0,
+        translateY: 50,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-body',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 2000,
+        easing: 'easeOutExpo',
+        offset: offset,
+    });
+
+    t35_lineTextF_WithOffset = anime.timeline({
+        loop: false,
+        autoplay: false
+    }).add({
+        targets: '#text-content-group-35 .text-bottom',
+        translateX: 0,
+        translateY: 20,
+        opacity: 0,
+        duration: 0
+    }).add({
+        targets: '#text-content-group-35 .text-bottom',
+        translateX: 0,
+        translateY: 0,
+        opacity: 1,
+        duration: 800,
+        easing: 'easeOutExpo',
+        offset: offset+500
     });
 }
 
@@ -600,6 +804,17 @@ function group35_animation_start() {
     timelineC.restart();
     timelineC1.restart();
     
+}
+function group35_animation_start_with_offset() {
+    timeline_with_offset.restart();
+    timelineS_with_offset.restart();
+    timelineB_with_offset.restart();
+    timelineT1_with_offset.restart();
+    timelineT2_with_offset.restart();
+    timelineT3_with_offset.restart();
+    timelineT4_with_offset.restart();
+    timelineC_with_offset.restart();
+    timelineC1_with_offset.restart();
 }
 
 function group35_animation_end() {

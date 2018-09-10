@@ -64,7 +64,7 @@ function group37_animation() {
     var scale = [1/4, 1/4, 1/3, 1/4, 1/4, 1/3, 1/4, 1/4, 1/4, 1/4];
     var init_rotate = [0, 0, 45, 0, 0, 0, 0, 0, 0, 0];
     var rotate = [150, 150, 100, 0, 60, -50, -100, 0, -120, 0];
-    var duration = [3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000];
+    var duration = [2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500];
     
     t37_line2 = anime.timeline({
         loop: false,
@@ -87,7 +87,7 @@ function group37_animation() {
         scale: function(el, i) { return scale[i]; },
         rotate: function(el, i) { return rotate[i]; },
         opacity: 0,
-        easing: 'easeOutExpo',
+        easing: 'easeInExpo',
         duration: function(el, i) { return duration[i]; },
     });
 
@@ -135,9 +135,9 @@ function group37_animation() {
         translateX: 0,
         translateY: 134,
         transformOrigin: "0px center",
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 2000
+        duration: 1100,
+        easing: 'easeInExpo',
+        offset: 1400
     });
 
     t37_lineT1 = anime.timeline({
@@ -182,9 +182,9 @@ function group37_animation() {
         translateX: 74,
         translateY: 98,
         transformOrigin: "0px center",
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 1600
+        duration: 1300,
+        easing: 'linear',
+        offset: 1200
     });
 
     t37_lineT2 = anime.timeline({
@@ -229,9 +229,9 @@ function group37_animation() {
         translateX: 116,
         translateY: 0,
         transformOrigin: "0px center",
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 1200
+        duration: 1400,
+        easing: 'linear',
+        offset: 1100
     });
 
     t37_lineT3 = anime.timeline({
@@ -276,9 +276,9 @@ function group37_animation() {
         translateX: 446,
         translateY: 56,
         transformOrigin: "0px center",
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 800
+        duration: 1600,
+        easing: 'linear',
+        offset: 900
     });
 
     t37_lineBri = anime.timeline({
@@ -324,9 +324,9 @@ function group37_animation() {
         translateX: 265,
         translateY: 12,
         transformOrigin: "0px center",
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 0
+        duration: 1800,
+        easing: 'linear',
+        offset: 700
     });
 
     t37_lineC = anime.timeline({
@@ -344,7 +344,7 @@ function group37_animation() {
         translateX: 15,
         translateY: 81,
         duration: 3000,
-        easing: 'linear',
+        easing: 'easeOutExpo',
         offset: 2500
     });
 
@@ -354,7 +354,20 @@ function group37_animation() {
     }).add({
         targets: '#Group-90',
         opacity: 0,
-        duration: 3000
+        duration: 0
+    }).add({
+        targets: '#Group-90',
+        opacity: 1,
+        translateX: 15,
+        translateY: 81,
+        duration: 0
+    }).add({
+        targets: '#Group-90',
+        opacity: 0,
+        translateX: 0,
+        translateY: 81,
+        duration: 2500,
+        easing: 'easeOutExpo'
     });
 
     t37_lineBird = anime.timeline({
@@ -372,7 +385,7 @@ function group37_animation() {
         translateX: 62,
         translateY: 41,
         duration: 3000,
-        easing: 'linear',
+        easing: 'easeOutExpo',
         offset: 2500
     });
 
@@ -382,7 +395,20 @@ function group37_animation() {
     }).add({
         targets: '#Group-88',
         opacity: 0,
-        duration: 3000
+        duration: 0
+    }).add({
+        targets: '#Group-88',
+        opacity: 1,
+        translateX: 62,
+        translateY: 41,
+        duration: 0
+    }).add({
+        targets: '#Group-88',
+        opacity: 0,
+        translateX: 52,
+        translateY: 31,
+        duration: 3000,
+        easing: 'easeOutExpo',
     });
 
     t37_lineBear = anime.timeline({
@@ -408,7 +434,6 @@ function group37_animation() {
         transformOrigin: "0px bottom",
         duration: 3000,
         easing: 'easeOutExpo',
-        offset: 500,
         offset: 2500
     });
 
@@ -428,8 +453,8 @@ function group37_animation() {
         translateX: 80.8,
         translateY: 457,
         transformOrigin: "0px bottom",
-        duration: 3000,
-        easing: 'easeOutExpo',
+        duration: 2000,
+        easing: 'linear',
         offset: 500
     });
     
@@ -475,7 +500,7 @@ function group37_text_animation() {
         translateY: -470,
         duration: 3000,
         easing: 'easeOutExpo',
-        offset: 1500
+        offset: 2000
     });
 
     t37_lineText2 = anime.timeline({
@@ -495,7 +520,7 @@ function group37_text_animation() {
         targets: '#text-content-group-37',
         translateX: 0,
         translateY: 500,
-        duration: 1500,
+        duration: 2500,
         easing: 'easeInExpo',
     });
 
