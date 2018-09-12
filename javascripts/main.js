@@ -1,16 +1,13 @@
 group35_animation();
 // group35_animation_with_offset(2500);
-// group35_text_animation();
+group35_text_animation();
 // group35_text_animation_with_offset(2500);
 init_group();
 group37_animation();
-// group37_text_animation();
+group37_text_animation();
+group35_37_color_animation();
 
 function init_group() {
-    anime.timeline({ loop: false, autoplay: false })
-    .add({
-        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
-        offset: 0, duration: 0, opacity: 0 })
     anime.timeline({ loop: false, autoplay: true })
     .add({
         targets: ['#Group-69', '#Group-64', '#Group-61', '#Group-72', '#Group-66', '#Group-63', '#Group-75', '#Group-74', '#Group-68', '#Group-78'],
@@ -18,7 +15,12 @@ function init_group() {
     anime.timeline({ loop: false, autoplay: true })
     .add({
         targets: ['#Group-85', '#Group-87', '#Group-16', '#Group-86', '#Group-89', '#Group-90', '#Group-88', '#Group-5'],
-        offset: 0, duration: 0, opacity: 0 }) 
+        offset: 0, duration: 0, opacity: 0 });
+    anime.timeline({ loop: false, autoplay: true })
+    .add({
+        targets: '#text-content-group-37',
+        offset: 0, duration: 0, opacity: 0
+    }) 
 }
 
 
@@ -101,10 +103,12 @@ function parallaxScroll(evt) {
     }
     if(seekTime === 1 && pageNumber === 1 ){
         group37_animation_seek(seekTime);
+        
     }
 
     if(pageNumber === 2 || pageNumber === 3) {
         group37_animation_seek(seekTime);
+        group35_37_color_animation_seek(seekTime);
     }
 
     if(seekTime === 1 && pageNumber === 4) {

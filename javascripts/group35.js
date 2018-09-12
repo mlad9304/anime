@@ -11,11 +11,7 @@ var timelineC1; // cloud1
 var t35_lineTextH; // Text Header
 var t35_lineTextB; // Text Body
 var t35_lineTextF; // Text Footer
-var t35_lineTextH_WithOffset; // Text Header
-var t35_lineTextB_WithOffset; // Text Body
-var t35_lineTextF_WithOffset; // Text Footer
-var t35_lineText; // Text area
-var t35_lineText2; // Text area reduce
+var t35_lineMove; // Remove text
 
 
 
@@ -32,7 +28,7 @@ function group35_animation_seek(time) {
     timelineT4.seek(time);
     timelineC.seek(time);
     timelineC1.seek(time);
-
+    t35_lineMove.seek(3000 - time);
 }
 
 function group35_animation() {
@@ -60,177 +56,50 @@ function group35_animation() {
     .add({ offset: 803, duration: 1200, translateX: 20, translateY: 30, easing: 'linear', });
 
     timelineB = anime.timeline({ targets: '#Group-59', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 44, translateY: 171, transformOrigin: "0px center", })
-    .add({ offset: 2, duration: 3000, scaleY: 1, translateX: 44, translateY: 171, transformOrigin: "0px center", easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 44, translateY: 171, transformOrigin: "0px center", })
+    .add({ offset: 1, duration: 3000, scaleY: 1, translateX: 44, translateY: 171, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     timelineT1 = anime.timeline({ targets: '#Group-55', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 101, translateY: 182, transformOrigin: "0px center" })
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 101, translateY: 182, transformOrigin: "0px center" })
     .add({ offset: 800, duration: 2200, scaleY: 1, translateX: 101, translateY: 182, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     timelineT2 = anime.timeline({ targets: '#Group-52', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 138, translateY: 91, transformOrigin: "0px center", })
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 138, translateY: 91, transformOrigin: "0px center", })
     .add({ offset: 1400, duration: 1600, scaleY: 1, translateX: 138, translateY: 91, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     timelineT3 = anime.timeline({ targets: '#Group-53', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 365, translateY: 142, transformOrigin: "0px center", })
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 365, translateY: 142, transformOrigin: "0px center", })
     .add({ offset: 1100, duration: 1900, scaleY: 1, translateX: 365, translateY: 142, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     timelineT4 = anime.timeline({ targets: '#Group-56', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 402, translateY: 111, transformOrigin: "0px center", })
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 402, translateY: 111, transformOrigin: "0px center", })
     .add({ offset: 800, duration: 2200, scaleY: 1, translateX: 402, translateY: 111, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     timelineC = anime.timeline({ targets: '#Group-58', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, translateX: 185, translateY: 120, scaleX: 1/2})
-    .add({ offset: 2, duration: 3000, translateX: 30, translateY: 120, scaleX: 1, easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, translateX: 185, translateY: 120, scaleX: 1/2})
+    .add({ offset: 1, duration: 3000, translateX: 30, translateY: 120, scaleX: 1, easing: 'easeOutExpo', });
 
     timelineC1 = anime.timeline({ targets: '#Group-60', loop: false, autoplay: true })
-    .add({ offset: 0, duration: 2, translateX: 280, translateY: 190, })
-    .add({ offset: 2, duration: 3000, translateX: 480, translateY: 190, easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, translateX: 280, translateY: 190, })
+    .add({ offset: 1, duration: 3000, translateX: 480, translateY: 190, easing: 'easeOutExpo', });
 
 }
 
 function group35_text_animation() {
 
-    t35_lineTextH = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: -20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 1000,
-        easing: 'easeOutExpo',
-    });
+    t35_lineTextH = anime.timeline({ targets: '#text-content-group-35 .text-title', loop: false, autoplay: true })
+    .add({ offset: 0, duration: 1, translateX: 0, translateY: -20, opacity: 0, })
+    .add({ offset: 1, duration: 1000, translateX: 0, translateY: 0, opacity: 1, easing: 'easeOutExpo', });
 
-    t35_lineTextB = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 50,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 2000,
-        easing: 'easeOutExpo',
-    });
+    t35_lineTextB = anime.timeline({ targets: '#text-content-group-35 .text-body', loop: false, autoplay: true })
+    .add({ offset: 0, duration: 1, translateX: 0, translateY: 50, opacity: 0, })
+    .add({ offset: 1, duration: 2000, translateX: 0, translateY: 0, opacity: 1, easing: 'easeOutExpo', });
 
-    t35_lineTextF = anime.timeline({
-        loop: false,
-        autoplay: true
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 800,
-        easing: 'easeOutExpo',
-        offset: 500
-    });
+    t35_lineTextF = anime.timeline({ targets: '#text-content-group-35 .text-bottom', loop: false, autoplay: true })
+    .add({ offset: 0, duration: 1, translateX: 0, translateY: 20, opacity: 0, })
+    .add({ offset: 500, duration: 800, translateX: 0, translateY: 0, opacity: 1, easing: 'easeOutExpo', });
 
-    t35_lineText = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-35',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 0
-    });
-
-    t35_lineText2 = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-35',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        offset: 0,
-    }).add({
-        targets: '#text-content-group-35',
-        translateX: 0,
-        translateY: -500,
-        opacity: 0,
-        duration: 2500,
-        easing: 'easeInExpo',
-    });
-}
-
-function group35_text_animation_with_offset(offset) {
-    t35_lineTextH_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: -20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-title',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 1000,
-        easing: 'easeOutExpo',
-        offset: offset,
-    });
-
-    t35_lineTextB_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 50,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-body',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 2000,
-        easing: 'easeOutExpo',
-        offset: offset,
-    });
-
-    t35_lineTextF_WithOffset = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 20,
-        opacity: 0,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-35 .text-bottom',
-        translateX: 0,
-        translateY: 0,
-        opacity: 1,
-        duration: 800,
-        easing: 'easeOutExpo',
-        offset: offset+500
-    });
+    t35_lineMove = anime.timeline({ targets: '#text-content-group-35', loop: false, autoplay: false })
+    .add({ offset: 0, duration: 1, translateX: 0, translateY: 0, opacity: 1,})
+    .add({ offset: 1500, duration: 1500, translateX: 0, translateY: -500, opacity: 0, easing: 'easeInExpo', });
 }

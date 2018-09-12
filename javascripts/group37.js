@@ -15,6 +15,7 @@ var t37_lineBird; // Birds
 var t37_lineBear; // Bear
 
 function group37_animation_seek(time) {
+    
     if(time <= 0) 
         time = 1;
 
@@ -27,6 +28,8 @@ function group37_animation_seek(time) {
     t37_lineC.seek(time);
     t37_lineBird.seek(time);
     t37_lineBear.seek(time);
+
+    t37_lineText.seek(time);
 }
 
 function group37_animation() {
@@ -49,77 +52,44 @@ function group37_animation() {
     });
 
     t37_lineB = anime.timeline({ targets: '#Group-85', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 0, translateY: 134, transformOrigin: "0px center", opacity: 1})
-    .add({ offset: 2, duration: 3000, scaleY: 1, translateX: 0, translateY: 134, transformOrigin: "0px center", easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 0, translateY: 134, transformOrigin: "0px center", opacity: 1})
+    .add({ offset: 1, duration: 3000, scaleY: 1, translateX: 0, translateY: 134, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     t37_lineT1 = anime.timeline({ targets: '#Group-87', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 74, translateY: 98, transformOrigin: "0px center", opacity: 1})
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 74, translateY: 98, transformOrigin: "0px center", opacity: 1})
     .add({ offset: 200, duration: 3000, scaleY: 1, translateX: 74, translateY: 98, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     t37_lineT2 = anime.timeline({ targets: '#Group-16', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 116, translateY: 0, transformOrigin: "0px center", opacity: 1})
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 116, translateY: 0, transformOrigin: "0px center", opacity: 1})
     .add({ offset: 400, duration: 3000, scaleY: 1, translateX: 116, translateY: 0, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     t37_lineT3 = anime.timeline({ targets: '#Group-86', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 446, translateY: 56, transformOrigin: "0px center", opacity: 1})
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 446, translateY: 56, transformOrigin: "0px center", opacity: 1})
     .add({ offset: 500, duration: 3000, scaleY: 1, translateX: 446, translateY: 56, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     t37_lineBri = anime.timeline({ targets: '#Group-89', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 265, translateY: 12, transformOrigin: "0px center", opacity: 1})
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 265, translateY: 12, transformOrigin: "0px center", opacity: 1})
     .add({ offset: 700, duration: 3000, scaleY: 1, translateX: 265, translateY: 12, transformOrigin: "0px center", easing: 'easeOutExpo', });
 
     t37_lineC = anime.timeline({ targets: '#Group-90', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, opacity: 0, translateX: 0, translateY: 81 })
-    .add({ offset: 2, duration: 3000, opacity: 1, translateX: 15, translateY: 81, easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, opacity: 0, translateX: 0, translateY: 81 })
+    .add({ offset: 1, duration: 3000, opacity: 1, translateX: 15, translateY: 81, easing: 'easeOutExpo', });
 
     t37_lineBird = anime.timeline({ targets: '#Group-88', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, opacity: 0, translateX: 52, translateY: 31})
-    .add({ offset: 2, duration: 3000, opacity: 1, translateX: 62, translateY: 41, easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, opacity: 0, translateX: 52, translateY: 31})
+    .add({ offset: 1, duration: 3000, opacity: 1, translateX: 62, translateY: 41, easing: 'easeOutExpo', });
 
     t37_lineBear = anime.timeline({ targets: '#Group-5', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 2, scaleY: 0, translateX: 80.8, translateY: 457, transformOrigin: "0px bottom", opacity: 1})
-    .add({ offset: 2, duration: 3000, scaleY: 1, translateX: 80.8, translateY: 457, transformOrigin: "0px bottom", easing: 'easeOutExpo', });
+    .add({ offset: 0, duration: 1, scaleY: 0, translateX: 80.8, translateY: 457, transformOrigin: "0px bottom", opacity: 1})
+    .add({ offset: 1, duration: 3000, scaleY: 1, translateX: 80.8, translateY: 457, transformOrigin: "0px bottom", easing: 'easeOutExpo', });
 
 }
 
 function group37_text_animation() {
 
-    t37_lineText = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-37',
-        translateX: 0,
-        translateY: 500,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-37',
-        translateX: 0,
-        translateY: -470,
-        duration: 3000,
-        easing: 'easeOutExpo',
-        offset: 2000
-    });
-
-    t37_lineText2 = anime.timeline({
-        loop: false,
-        autoplay: false
-    }).add({
-        targets: '#text-content-group-37',
-        translateX: 0,
-        translateY: 500,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-37',
-        translateX: 0,
-        translateY: -470,
-        duration: 0
-    }).add({
-        targets: '#text-content-group-37',
-        translateX: 0,
-        translateY: 500,
-        duration: 2500,
-        easing: 'easeInExpo',
-    });
+    t37_lineText = anime.timeline({ targets: '#text-content-group-37', loop: false, autoplay: false })
+    .add({ offset: 0, duration: 1, translateX: 0, translateY: 500, opacity: 0 })
+    .add({ offset: 1, duration: 2, translateX: 0, translateY: -100, opacity: 1 })
+    .add({ offset: -500, duration: 3000, translateX: 0, translateY: -470, easing: 'easeOutExpo', });
 
 }
