@@ -22,8 +22,6 @@ html, body {
 }
 
 .section {
-    min-width: 1280px;
-    min-height: 700px;
 
     width: 1280px;
     height: 700px;
@@ -36,12 +34,50 @@ html, body {
     transform: translate(-50%, -50%);
 
     display: flex;
-    
+    flex-direction: row;
+
+}
+
+@media (max-width: 375px) {
+    .section {
+        width: 324px;
+        height: 600px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+    .section>div {
+        margin-top: 10px;
+    }
+
+    .text-container {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+        position: relative;
+    }
+
+    .svg-container {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+    }
 }
 
 .text-container, .svg-container {
     flex: 1;
     height: 100%;
+}
+@media (max-width: 375px) {
+    .text-container, .svg-container {
+        width: 100%;
+        height: 50%;
+    }
 }
 
 .text-content {
@@ -49,6 +85,17 @@ html, body {
     margin-left: 185px;
     width: 466px;
     height: 186px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+@media (max-width: 375px) {
+    .text-content {
+        margin-top: 12px;
+        margin-left: 12px;
+        width: 300px;
+        height: 267px;
+    }
 }
 
 .svg-content {
@@ -56,6 +103,20 @@ html, body {
     margin-left: 0;
     width: 533px;
     height: 518px;
+}
+
+@media (max-width: 375px) {
+    .svg-content {
+        
+        margin-top: 12px;
+        margin-left: 12px;
+        width: 300px ;
+        height: 262px;
+    }
+    .svg-content svg {
+        width: 100%;
+        height: 100%;  
+    }
 }
 
 .text-title {

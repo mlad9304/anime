@@ -89,7 +89,6 @@ function group37_text_animation() {
 
     t37_lineText = anime.timeline({ targets: '#text-content-group-37', loop: false, autoplay: false })
     .add({ offset: 0, duration: 1, translateX: 0, translateY: 500, opacity: 0 })
-    .add({ offset: 1, duration: 2, translateX: 0, translateY: -100, opacity: 1 })
-    .add({ offset: -500, duration: 3000, translateX: 0, translateY: -470, easing: 'easeOutExpo', });
+    .add({ offset: 1, duration: 3000, translateX: 0, translateY: 0, opacity: 1, easing: 'easeOutExpo', });
 
 }
