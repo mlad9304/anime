@@ -1,9 +1,25 @@
 group35_animation();
-group35_animation_with_offset(2500);
-group35_text_animation();
-group35_text_animation_with_offset(2500);
+// group35_animation_with_offset(2500);
+// group35_text_animation();
+// group35_text_animation_with_offset(2500);
+init_group();
 group37_animation();
-group37_text_animation();
+// group37_text_animation();
+
+function init_group() {
+    anime.timeline({ loop: false, autoplay: false })
+    .add({
+        targets: ['#Group-41', '#Group-80', '#Group-43', '#Group-48', '#Group-44', '#Group-46', '#Group-79', '#Group-47', '#Group-49', '#Group-81', '#Group-50'],
+        offset: 0, duration: 0, opacity: 0 })
+    anime.timeline({ loop: false, autoplay: true })
+    .add({
+        targets: ['#Group-69', '#Group-64', '#Group-61', '#Group-72', '#Group-66', '#Group-63', '#Group-75', '#Group-74', '#Group-68', '#Group-78'],
+        offset: 0, duration: 0, opacity: 0 })
+    anime.timeline({ loop: false, autoplay: true })
+    .add({
+        targets: ['#Group-85', '#Group-87', '#Group-16', '#Group-86', '#Group-89', '#Group-90', '#Group-88', '#Group-5'],
+        offset: 0, duration: 0, opacity: 0 }) 
+}
 
 
 var isAnimationStart = false;
@@ -11,53 +27,6 @@ var isAnimationEnd = false;
 var isLockDown = false;
 var isLockUp = false;
 
-
-// document.body.addEventListener('wheel', function(e) {
-//     if (e.deltaY < 0) {
-//         console.log('scrolling up');
-//         if(isLockDown)
-//             return;
-//         if(!isAnimationEnd) {
-
-//             isLockUp = true;
-//             setTimeout(() => {
-//                 isLockUp = false;
-//             }, 3000);
-
-//             group37_animation_end();
-//             group35_animation_start_with_offset();
-//             group35_37_color_animation_end();
-//             group37_text_animation_end();
-//             group35_text_animation_start_with_offset();
-//         }
-
-//         isAnimationEnd = true;
-//         isAnimationStart = false;
-//     }
-//     if (e.deltaY > 0) {
-//         console.log('scrolling down');
-//         if(isLockUp)
-//             return;
-//         if(!isAnimationStart) {
-
-//             isLockDown = true;
-//             setTimeout(() => {
-//                 isLockDown = false;
-//             }, 3000);
-
-//             group35_animation_end();
-//             group37_animation_start();
-//             group35_37_color_animation_start();
-//             group37_text_animation_start();
-
-//             group35_text_animation_end();            
-//         }
-        
-//         isAnimationStart = true;
-//         isAnimationEnd = false;
-
-//     }
-// })
 
 var scrollSensitivitySetting = 30;
 var isFirefox = (/Firefox/i.test(navigator.userAgent));
@@ -118,16 +87,28 @@ function parallaxScroll(evt) {
     }
 
 
-    if(pageNumber<0) {
-        pageNumber = 0;
+    if(pageNumber < 1) {
         return;
     }
+
+    console.log('Page: ', pageNumber, ' Seek:', seekTime);
 
     if(pageNumber === 0 || pageNumber === 1)
         group35_animation_seek(seekTime);
 
     if(seekTime === 1 && pageNumber === 2) {
         group35_animation_seek(seekTime);
+    }
+    if(seekTime === 1 && pageNumber === 1 ){
+        group37_animation_seek(seekTime);
+    }
+
+    if(pageNumber === 2 || pageNumber === 3) {
+        group37_animation_seek(seekTime);
+    }
+
+    if(seekTime === 1 && pageNumber === 4) {
+        group37_animation_seek(seekTime);
     }
 
 
