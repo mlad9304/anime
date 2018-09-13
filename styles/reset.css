@@ -46,7 +46,7 @@ html, body {
     margin-top: 96px;
     margin-left: 0;
     width: 533px;
-    height: 518px;
+    /* height: 518px; */
 }
 .text_content {
     margin-top: 267px;
