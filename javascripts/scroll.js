@@ -8,9 +8,21 @@ $(document).ready(function() {
     console.log(MAX_SCROLL_TOP)
 
     $(document).scroll(function() {
+        
+        var scrollTop = $(document).scrollTop();
+
+        console.log(scrollTop);
+
+        if(scrollTop < MAX_SCROLL_TOP/10) {
+            $('.container').css('background', '#f0f4f8');
+        } else if(scrollTop >= MAX_SCROLL_TOP/10 && scrollTop < MAX_SCROLL_TOP * 0.9) {
+            $('.container').css('background', 'linear-gradient(to bottom, #f0f4f8 0%, #fff1f1 100%)');
+        } else if(scrollTop > MAX_SCROLL_TOP * 0.9) {
+            $('.container').css('background', '#fff1f1');
+        }
+
         if(!AUTO_SCROLLING) {
-            
-            var scrollTop = $(document).scrollTop();
+
             var seekTime = parseInt(MIN_SEEK_TIME + (MAX_SEEK_TIME-MIN_SEEK_TIME) * scrollTop / MAX_SCROLL_TOP);
             group35_animation_seek(seekTime);
             group37_animation_seek(seekTime);

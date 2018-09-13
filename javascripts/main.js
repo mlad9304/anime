@@ -16,7 +16,6 @@ function init_group() {
     .add({
         targets: ['#Group-85', '#Group-87', '#Group-16', '#Group-86', '#Group-89', '#Group-90', '#Group-88', '#Group-5'],
         offset: 0, duration: 0, opacity: 0 });
-    anime.timeline({ loop: false, autoplay: true })
 }
 
 

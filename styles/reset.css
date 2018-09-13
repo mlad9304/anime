@@ -8,7 +8,7 @@ html, body {
 }
 
 .container {
-    background: linear-gradient(to bottom, #f0f4f8 0%, #fff1f1 100%);
+    background: #f0f4f8;
 }
 
 .page {

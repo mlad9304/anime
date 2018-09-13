@@ -39,8 +39,8 @@ function group35_animation() {
         rotate: function(el, i) { return [-60, 0, -50, 0, 50, 90, 0, -100, 150, 0, -80][i]; }, })
     .add({
         offset: 1, duration: 3000,
-        translateX: function(el, i) { return [50, 10, 0, 90, 30, 190, 230, 290, 260, 270, 310][i]; },
-        translateY: function(el, i) { return [10, 40, 120, 200, 230, 0, 90, 40, 100, 200, 230][i]; },
+        translateX: function(el, i) { return [51, 22, 0, 88, 31, 191, 231, 293, 260, 268, 302][i]; },
+        translateY: function(el, i) { return [10, 46, 112, 203, 234, 0, 89, 40, 97, 201, 222][i]; },
         scale: 1, rotate: 0, easing: 'easeOutExpo',})
     .add({
         offset: 3000, duration: 2500,
