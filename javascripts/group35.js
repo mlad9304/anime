@@ -8,27 +8,13 @@ var timelineT4; // Tree4 expand
 var timelineC; // cloud
 var timelineC1; // cloud1
 
-var timeline2; 
-var timelineS2; 
-var timelineB2; 
-var timelineT12; 
-var timelineT22; 
-var timelineT32; 
-var timelineT42; 
-var timelineC2; 
-var timelineC12; 
-
 var t35_lineTextH; // Text Header
 var t35_lineTextB; // Text Body
 var t35_lineTextF; // Text Footer
-var t35_lineMove; // Remove text
-
 
 
 function group35_animation_seek(time) {
-    if(time <= 0) 
-        time = 1;
-    
+        
     timeline.seek(time);
     timelineS.seek(time);;
     timelineB.seek(time);
@@ -38,7 +24,6 @@ function group35_animation_seek(time) {
     timelineT4.seek(time);
     timelineC.seek(time);
     timelineC1.seek(time);
-    t35_lineMove.seek(3000 - time);
 }
 
 function group35_animation() {
@@ -129,7 +114,5 @@ function group35_text_animation() {
     .add({ offset: 0, duration: 1, translateX: 0, translateY: 20, opacity: 0, })
     .add({ offset: 500, duration: 800, translateX: 0, translateY: 0, opacity: 1, easing: 'easeOutExpo', });
 
-    t35_lineMove = anime.timeline({ targets: '#text-content-group-35', loop: false, autoplay: false })
-    .add({ offset: 0, duration: 1, translateX: 0, translateY: 0, opacity: 1,})
-    .add({ offset: 1500, duration: 1500, translateX: 0, translateY: -500, opacity: 0, easing: 'easeInExpo', });
+
 }

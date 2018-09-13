@@ -1,8 +1,6 @@
 var t37_lineTextH; // Text Header
 var t37_lineTextB; // Text Body
 var t37_lineTextF; // Text Footer
-var t37_lineText; // Text area expand
-var t37_lineText2; // Text area reduce
 
 var t37_line; // Group 7
 var t37_lineB; // background(Rock) expand timeline
@@ -16,9 +14,6 @@ var t37_lineBear; // Bear
 
 function group37_animation_seek(time) {
     
-    if(time <= 0) 
-        time = 1;
-
     t37_line.seek(time);
     t37_lineB.seek(time);
     t37_lineT1.seek(time);
@@ -28,8 +23,6 @@ function group37_animation_seek(time) {
     t37_lineC.seek(time);
     t37_lineBird.seek(time);
     t37_lineBear.seek(time);
-
-    t37_lineText.seek(time);
 }
 
 function group37_animation() {
@@ -87,6 +80,9 @@ function group37_animation() {
 
 function group37_text_animation() {
 
+    t37_lineTextH = anime.timeline({ targets: '#text-content-group-37', loop: false, autoplay: true })
+    .add({ offset: 5000, duration: 1, opacity: 0, })
+    .add({ offset: 5501, duration: 2000, opacity: 1, easing: 'linear', });
 
 
 }
