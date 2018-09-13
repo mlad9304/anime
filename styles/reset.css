@@ -55,6 +55,7 @@ html, body {
     position: absolute;
     top: 0px;
     left: 0px;
+    overflow: hidden;
 }
 .text_title {
     font-size: 28px;
@@ -106,6 +107,6 @@ html, body {
         margin-left: 12px;
         width: 300px;
         position: relative;
-        overflow: hidden;
+        
     }
 }
