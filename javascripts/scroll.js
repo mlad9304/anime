@@ -34,6 +34,7 @@ $(document).ready(function() {
     .delay(5000)
     .animate({ scrollTop: MAX_SCROLL_TOP }, 3000, 'easeOutQuart', function() {
         AUTO_SCROLLING = false;
+        $('body').removeClass('scr-show');
     });
 
 });
