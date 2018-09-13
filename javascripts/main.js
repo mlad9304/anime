@@ -17,10 +17,6 @@ function init_group() {
         targets: ['#Group-85', '#Group-87', '#Group-16', '#Group-86', '#Group-89', '#Group-90', '#Group-88', '#Group-5'],
         offset: 0, duration: 0, opacity: 0 });
     anime.timeline({ loop: false, autoplay: true })
-    .add({
-        targets: '#text-content-group-37',
-        offset: 0, duration: 0, opacity: 0
-    }) 
 }
 
 
@@ -120,4 +116,4 @@ function parallaxScroll(evt) {
 }
 
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+// window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
